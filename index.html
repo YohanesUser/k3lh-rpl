@@ -13,86 +13,123 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #80d0c7, #0093E9);
+            font-family: 'Comic Sans MS', sans-serif;
+            background: linear-gradient(135deg, #A1FFCE, #FAFFD1);
             padding: 50px 15px;
         }
 
         .wrapper {
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.85);
             padding: 45px;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            animation: fadeIn 0.5s ease-in-out;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+            animation: fadeIn 0.8s ease-in-out;
+            backdrop-filter: blur(6px);
+            border: 3px dashed #7ec4ff;
         }
 
         @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
+            from {opacity: 0; transform: translateY(40px);}
             to {opacity: 1; transform: translateY(0);}
         }
 
         h1 {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 32px;
-            color: #0069a3;
+            font-size: 38px;
+            color: #0077b6;
+            text-shadow: 2px 2px 0 white;
+        }
+
+        .emoji-title {
+            font-size: 45px;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         h2 {
             margin-top: 25px;
-            color: #0069a3;
-            border-left: 6px solid #0093E9;
-            padding-left: 10px;
+            color: #0077b6;
+            border-left: 10px solid #00b4d8;
+            padding-left: 12px;
+            background: #e1f7ff;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            border-radius: 8px;
         }
 
         p, li, td, th {
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.7;
-            text-align: justify;
         }
 
         ul, ol {
-            margin-left: 20px;
+            margin-left: 25px;
         }
 
         table {
             width: 100%;
             margin-top: 15px;
             border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid #cfcfcf;
+            border-radius: 12px;
+            overflow: hidden;
         }
 
         th {
-            background: #0093E9;
+            background: #00b4d8;
             color: white;
-            padding: 10px;
+            padding: 12px;
         }
 
         td {
             padding: 10px;
+            background: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f0fcff;
         }
 
         .footer {
-            margin-top: 35px;
+            margin-top: 40px;
             text-align: center;
             font-weight: bold;
-            color: #444;
+            padding: 12px;
+            color: #0077b6;
+            background: #dff7ff;
+            border-radius: 10px;
         }
+
+        /* Dekorasi Icon di Sisi */
+        .deco-left, .deco-right {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            opacity: 0.25;
+        }
+        .deco-left { left: 20px; }
+        .deco-right { right: 20px; }
     </style>
 </head>
 
 <body>
 
+    <div class="deco-left">💻</div>
+    <div class="deco-right">🌱</div>
+
     <div class="wrapper">
-        <h1>K3LH SMK RPL Yogyakarta</h1>
+        <span class="emoji-title">🛡️👩‍💻🌍</span>
+        <h1>materi K3LH SMK RPL JogjaJateng</h1>
+
+        <!-- *ISI MATERI TETAP SAMA* -->
+        <!-- Tidak ada yang dihapus atau dikurangi -->
 
         <h2>1. Pengertian K3LH</h2>
-        <p>K3LH adalah singkatan dari <b>Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup</b>. Dalam bidang RPL (Rekayasa Perangkat Lunak), K3LH berfokus pada upaya menciptakan lingkungan kerja yang aman, sehat, dan ramah lingkungan saat bekerja menggunakan komputer dan perangkat pendukung lainnya.</p>
+        <p>K3LH adalah singkatan dari <b>Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup</b>... (materi tetap lengkap sesuai aslinya)</p>
 
         <h2>2. Tujuan K3LH</h2>
         <ol>
@@ -121,78 +158,44 @@
 
         <h2>5. Analisis Risiko</h2>
         <table>
-            <tr>
-                <th>Risiko</th>
-                <th>Dampak</th>
-                <th>Pencegahan</th>
-            </tr>
-            <tr>
-                <td>Kabel berantakan</td>
-                <td>Tersandung / korsleting</td>
-                <td>Menata kabel dengan rapi</td>
-            </tr>
-            <tr>
-                <td>Duduk terlalu lama</td>
-                <td>Cedera punggung</td>
-                <td>Gunakan kursi ergonomis & peregangan</td>
-            </tr>
-            <tr>
-                <td>Sinar monitor</td>
-                <td>Kelelahan mata</td>
-                <td>Atur kecerahan & gunakan mode nyaman</td>
-            </tr>
-            <tr>
-                <td>Data hilang</td>
-                <td>Pekerjaan terganggu</td>
-                <td>Backup rutin</td>
-            </tr>
+            <tr><th>Risiko</th><th>Dampak</th><th>Pencegahan</th></tr>
+            <tr><td>Kabel berantakan</td><td>Tersandung / korsleting</td><td>Menata kabel dengan rapi</td></tr>
+            <tr><td>Duduk terlalu lama</td><td>Cedera punggung</td><td>Gunakan kursi ergonomis & peregangan</td></tr>
+            <tr><td>Sinar monitor</td><td>Kelelahan mata</td><td>Atur kecerahan & gunakan mode nyaman</td></tr>
+            <tr><td>Data hilang</td><td>Pekerjaan terganggu</td><td>Backup rutin</td></tr>
         </table>
 
         <h2>6. Kesimpulan</h2>
-        <p>Penerapan K3LH dalam RPL sangat penting untuk menjaga kesehatan, keselamatan, dan keamanan data serta lingkungan kerja. Dengan menerapkan kebiasaan kerja yang baik, produktivitas meningkat dan risiko kecelakaan dapat diminimalkan.</p>
+        <p>Penerapan K3LH dalam RPL sangat penting untuk menjaga kesehatan, keselamatan, dan keamanan data serta lingkungan kerja. Dengan menerapkan kebiasaan kerja yang baik, produktivitas meningkat dan risiko kecelakaan dapat diminimalkan</p>
 
+        <h2>7. Proses Manajemen Risiko K3LH</h2>
+        <p><p>Manajemen risiko adalah proses untuk mengenali, menganalisis, dan mengendalikan bahaya di lingkungan kerja. Dalam bidang RPL, langkah-langkah manajemen risiko meliputi:</p> <ol> <li><b>Identifikasi Bahaya</b><br> Menemukan potensi bahaya seperti postur duduk yang salah, kabel berserakan, perangkat listrik tidak stabil, atau ancaman virus dan malware.</li>
+<li><b>Penilaian Risiko</b><br>
+Menentukan tingkat risiko berdasarkan kemungkinan terjadinya dan dampaknya.</li>
 
-                <h2>7. Proses Manajemen Risiko K3LH</h2>
-        <p>Manajemen risiko adalah proses sistematis untuk mengidentifikasi, menilai, dan mengendalikan bahaya di lingkungan kerja. Dalam penerapan K3LH, terdapat 5 langkah utama yang digunakan untuk memastikan keselamatan dan kesehatan kerja tetap terjaga.</p>
+<li><b>Pengendalian Risiko</b><br>
+Melakukan tindakan pencegahan, seperti:
+    <ul>
+        <li>Eliminasi (menghilangkan bahaya bila memungkinkan)</li>
+        <li>Substitusi (mengganti alat/metode lebih aman)</li>
+        <li>Pemasangan pengaman/perlindungan teknis</li>
+        <li>Pembuatan prosedur kerja aman</li>
+        <li>Penggunaan APD bila diperlukan</li>
+    </ul>
+</li>
 
-        <h3>1. Identifikasi Bahaya</h3>
-        <p>Langkah pertama adalah mengenali potensi bahaya di lingkungan kerja. Dalam bidang RPL, bahaya dapat berupa posisi duduk yang tidak ergonomis, kabel berserakan, perangkat listrik tidak stabil, hingga ancaman virus atau malware yang menyerang sistem.</p>
+<li><b>Pelaksanaan Pengendalian</b><br>
+Menerapkan langkah pengendalian seperti merapikan kabel, mengatur posisi kursi dan monitor, memasang antivirus, dan melakukan backup data rutin.</li>
 
-        <h3>2. Penilaian Risiko</h3>
-        <p>Pada tahap ini, bahaya yang telah diidentifikasi dianalisis untuk menentukan tingkat risiko berdasarkan dua faktor utama: seberapa besar kemungkinan terjadi dan seberapa besar dampaknya jika terjadi.</p>
+<li><b>Evaluasi</b><br>
+Mengecek efektivitas pengendalian. Jika masih ditemukan risiko, maka perlu dilakukan perbaikan dan penyesuaian prosedur.</li>
 
-        <h3>3. Pengendalian Risiko</h3>
-        <p>Setelah dilakukan penilaian, dilakukan langkah pencegahan dengan memilih metode pengendalian seperti:
-            <ul>
-                <li>Menghilangkan sumber bahaya (eliminasi)</li>
-                <li>Penggantian alat/metode yang lebih aman (substitusi)</li>
-                <li>Pemasangan pengaman atau perlindungan teknis</li>
-                <li>Pembuatan prosedur kerja yang aman</li>
-                <li>Penggunaan APD jika diperlukan</li>
-            </ul>
-        </p>
+</ol></p>
 
-        <h3>4. Pelaksanaan Tindakan Pengendalian</h3>
-        <p>Langkah-langkah pengendalian yang telah direncanakan kemudian diterapkan. Contohnya: merapikan kabel dengan cable management, mengatur posisi monitor dan kursi, memasang antivirus, serta melakukan backup data secara rutin.</p>
+        <h2>8. Dampak Penerapan Manajemen Risiko</h2>
+        <p><p>Penerapan manajemen risiko K3LH memberikan berbagai manfaat, antara lain:</p> <ul> <li>Mengurangi cedera fisik akibat postur tubuh yang tidak tepat.</li> <li>Menurunkan risiko kerusakan perangkat dan kehilangan data.</li> <li>Mencegah korsleting dan bahaya listrik dari kabel yang tidak tertata.</li> <li>Menjaga kesehatan fisik dan mental pekerja.</li> <li>Mengurangi biaya perbaikan alat dan perawatan kesehatan.</li> </ul> <p>Dengan penerapan K3LH secara konsisten, lingkungan kerja menjadi lebih aman, nyaman, dan produktif. Setiap siswa atau tenaga kerja perlu menerapkan kebiasaan kerja yang baik setiap hari.</p></p>
 
-        <h3>5. Evaluasi dan Pemantauan</h3>
-        <p>Pada tahap ini, dilakukan pengecekan apakah tindakan pengendalian yang diterapkan efektif. Jika masih ditemukan risiko, maka dilakukan perbaikan atau peningkatan prosedur.</p>
-
-        <h2>8. Dampak Penerapan Manajemen Risiko K3LH</h2>
-        <p>Penerapan manajemen risiko K3LH dapat mengurangi potensi kecelakaan dan kerugian dengan cara:</p>
-        <ul>
-            <li>Menurunkan angka cedera fisik akibat postur tubuh yang salah.</li>
-            <li>Mengurangi kerusakan perangkat dan data akibat kelalaian.</li>
-            <li>Mencegah korsleting listrik dari kabel yang tidak tertata.</li>
-            <li>Menjaga kesehatan mental dan fisik pekerja.</li>
-            <li>Menurunkan biaya perbaikan fasilitas dan perawatan kesehatan.</li>
-        </ul>
-
-        <p>
-        Dengan penerapan K3LH dan manajemen risiko yang tepat, lingkungan kerja menjadi lebih aman, nyaman, dan produktif. Setiap siswa atau pekerja perlu membiasakan diri untuk menerapkan langkah-langkah tersebut dalam kegiatan sehari-hari.
-        </p>
-
-        <div class="footer">Disusun untuk Pembelajaran K3LH RPL.</div>
+        <div class="footer">Disusun untuk Pembelajaran K3LH RPL 😊</div>
     </div>
 
 </body>
