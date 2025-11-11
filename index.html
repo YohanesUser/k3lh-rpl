@@ -6,124 +6,309 @@
     <title>K3LH SMK RPL Jogja</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+         * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Comic Sans MS', sans-serif;
-            background: linear-gradient(135deg, #A1FFCE, #FAFFD1);
-            padding: 50px 15px;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0a0f1f;
+    padding: 50px 15px;
+    overflow-x: hidden;
+}
 
-        .wrapper {
-            max-width: 900px;
-            margin: auto;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 45px;
-            border-radius: 18px;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-            animation: fadeIn 0.8s ease-in-out;
-            backdrop-filter: blur(6px);
-            border: 3px dashed #7ec4ff;
-        }
+/* Blob Neon Bergerak */
+.blob {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(0,255,255,0.45), rgba(0,0,40,0.4));
+    filter: blur(60px);
+    border-radius: 50%;
+    animation: moveBlob 12s infinite alternate ease-in-out;
+    z-index: -1;
+}
 
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(40px);}
-            to {opacity: 1; transform: translateY(0);}
-        }
+.blob:nth-child(1) { top: 10%; left: -10%; }
+.blob:nth-child(2) { bottom: 0%; right: -15%; animation-delay: 3s; }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 38px;
-            color: #0077b6;
-            text-shadow: 2px 2px 0 white;
-        }
+@keyframes moveBlob {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(60px, -60px) scale(1.3); }
+}
 
-        .emoji-title {
-            font-size: 45px;
-            display: block;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+/* Wrapper */
+.wrapper {
+    max-width: 900px;
+    margin: auto;
+    background: rgba(13, 20, 35, 0.75);
+    padding: 45px;
+    border-radius: 18px;
+    border: 1px solid rgba(0,255,255,0.3);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 0 35px rgba(0,255,255,0.25);
+    animation: fadeUp 0.8s ease-out;
+}
 
-        h2 {
-            margin-top: 25px;
-            color: #0077b6;
-            border-left: 10px solid #00b4d8;
-            padding-left: 12px;
-            background: #e1f7ff;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            border-radius: 8px;
-        }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-        p, li, td, th {
-            font-size: 18px;
-            line-height: 1.7;
-        }
+/* Title shimmer bergerak */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #00eaff;
+    background: linear-gradient(90deg, #00eaff, #7dfdff, #00eaff);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s infinite linear;
+}
 
-        ul, ol {
-            margin-left: 25px;
-        }
+@keyframes shimmer {
+    to { background-position: -200%; }
+}
 
-        table {
-            width: 100%;
-            margin-top: 15px;
-            border-collapse: collapse;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+/* Subjudul dengan glow pulse */
+h2 {
+    margin-top: 30px;
+    font-size: 22px;
+    padding-left: 14px;
+    border-left: 6px solid #00eaff;
+    color: #aefbff;
+    text-shadow: 0 0 8px #00eaff;
+    animation: pulse 3s infinite ease-in-out;
+}
 
-        th {
-            background: #00b4d8;
-            color: white;
-            padding: 12px;
-        }
+@keyframes pulse {
+    0%,100% { text-shadow: 0 0 8px #00eaff; }
+    50% { text-shadow: 0 0 18px #00eaff; }
+}
 
-        td {
-            padding: 10px;
-            background: white;
-        }
+/* Text */
+p, li, td, th {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #e8faff;
+}
 
-        tr:nth-child(even) {
-            background: #f0fcff;
-        }
+/* Tabel Glowing */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
 
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-weight: bold;
-            padding: 12px;
-            color: #0077b6;
-            background: #dff7ff;
-            border-radius: 10px;
-        }
+th {
+    background: rgba(0,255,255,0.25);
+    color: #00eaff;
+    padding: 12px;
+    text-shadow: 0 0 8px cyan;
+}
 
-        /* Dekorasi Icon di Sisi */
-        .deco-left, .deco-right {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 60px;
-            opacity: 0.25;
-        }
-        .deco-left { left: 20px; }
-        .deco-right { right: 20px; }
-    </style>
+td {
+    padding: 12px;
+    background: rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(0,255,255,0.1);
+}
+
+tr:hover {
+    background: rgba(0,255,255,0.18);
+    transition: .3s;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(0,255,255,0.12);
+    color: #7dfdff;
+    box-shadow: 0 0 12px rgba(0,255,255,0.5);
+    font-weight: 600;
+}
+
+    .emoji-title {
+    display: block;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 10px;
+    animation: floatEmoji 3s infinite ease-in-out;
+}
+
+@keyframes floatEmoji {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+/* BINTANG BERJATUH */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.stars::before, .stars::after {
+    content: "";
+    position: absolute;
+    top: -200px;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        100px 200px white,
+        300px 50px white,
+        500px 400px white,
+        200px 100px white,
+        700px 250px white,
+        900px 80px white,
+        400px 300px white,
+        250px 500px white,
+        600px 200px white,
+        800px 450px white;
+    animation: fall 12s linear infinite;
+    opacity: 0.85;
+    border-radius: 50%;
+}
+
+.stars::after {
+    animation-delay: 6s;
+}
+
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(900px); }
+}
+/* GALAXY PARALLAX 3 LAYER */
+.galaxy {
+    position: fixed;
+    top: 0; left: 0;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    background-repeat: repeat;
+    opacity: 0.45;
+    z-index: -5;
+}
+
+/* Lapisan 1 (paling jauh) */
+.galaxy-1 {
+    background-image: url('https://www.pngplay.com/wp-content/uploads/4/Meteor-PNG-Images-HD.png');
+    animation: moveGalaxy1 55s linear infinite;
+}
+
+/* Lapisan 2 (tengah) */
+.galaxy-2 {
+    background-image: url('https://www.pngplay.com/wp-content/uploads/4/Meteor-PNG-Images-HD.png');
+    animation: moveGalaxy2 35s linear infinite;
+    opacity: 0.65;
+}
+
+/* Lapisan 3 (dekat) */
+.galaxy-3 {
+    background-image: url('https://www.pngplay.com/wp-content/uploads/4/Meteor-PNG-Images-HD.png');
+    animation: moveGalaxy3 18s linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes moveGalaxy1 {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(-200px, -200px) scale(1.1); }
+}
+
+@keyframes moveGalaxy2 {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(-350px, -350px) scale(1.2); }
+}
+
+@keyframes moveGalaxy3 {
+    from { transform: translate(0,0) scale(1); }
+    to { transform: translate(-600px, -600px) scale(1.25); }
+}
+/* Garis Neon di Judul Section */
+h2 {
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+h2:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 3px;
+    background: #00f7ff;
+    box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    transition: width 0.4s ease;
+}
+
+h2:hover:before {
+    width: 100%;
+}
+
+h2:hover {
+    color: #9ffaff;
+    text-shadow: 0 0 8px #00ffff;
+}
+
+/* Efek Glow Hover pada Container */
+.container:hover {
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.5);
+    transition: 0.4s;
+}
+
+/* Bullet list glow halus */
+li {
+    transition: 0.3s;
+}
+
+li:hover {
+    color: #b8ffff;
+    transform: translateX(5px);
+}
+
+
+</style>
 </head>
 
 <body>
 
-    <div class="deco-left">💻</div>
-    <div class="deco-right">🌱</div>
+<!-- Partikel Neon -->
+<div class="particle" style="top:70%; left:10%;"></div>
+<div class="particle" style="top:60%; left:80%; animation-delay:2s;"></div>
+<div class="particle" style="top:50%; left:40%; animation-delay:1s;"></div>
 
-    <div class="wrapper">
+
+<div class="blob"></div>
+<div class="blob"></div>
+
+<div class="stars"></div>
+
+<body>
+
+<div class="galaxy galaxy-1"></div>
+<div class="galaxy galaxy-2"></div>
+<div class="galaxy galaxy-3"></div>
+
+
+
+<div class="wrapper">
         <span class="emoji-title">🛡️👩‍💻🌍</span>
-        <h1>materi K3LH SMK RPL JogjaJateng</h1>
+        <h1>Materi K3LH SMK RPL </h1>
 
         <!-- *ISI MATERI TETAP SAMA* -->
         <!-- Tidak ada yang dihapus atau dikurangi -->
@@ -192,11 +377,24 @@ Mengecek efektivitas pengendalian. Jika masih ditemukan risiko, maka perlu dilak
 
 </ol></p>
 
+
+
         <h2>8. Dampak Penerapan Manajemen Risiko</h2>
         <p><p>Penerapan manajemen risiko K3LH memberikan berbagai manfaat, antara lain:</p> <ul> <li>Mengurangi cedera fisik akibat postur tubuh yang tidak tepat.</li> <li>Menurunkan risiko kerusakan perangkat dan kehilangan data.</li> <li>Mencegah korsleting dan bahaya listrik dari kabel yang tidak tertata.</li> <li>Menjaga kesehatan fisik dan mental pekerja.</li> <li>Mengurangi biaya perbaikan alat dan perawatan kesehatan.</li> </ul> <p>Dengan penerapan K3LH secara konsisten, lingkungan kerja menjadi lebih aman, nyaman, dan produktif. Setiap siswa atau tenaga kerja perlu menerapkan kebiasaan kerja yang baik setiap hari.</p></p>
+        <div class="card">
+
+            
+            </div>
+
+        </br>
+    </br>
+    <p><strong>Poin Penting:</strong></p> <p> bukan sekadar aturan, tapi kebiasaan kerja aman yang membentuk budaya profesional di bidang RPL.</p>
+</div>
 
         <div class="footer">Disusun untuk Pembelajaran K3LH RPL 😊</div>
     </div>
+
+    
 
 </body>
 </html>
